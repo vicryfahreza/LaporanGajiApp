@@ -17,8 +17,4 @@ class AddViewModel(application: Application) : ViewModel() {
         mgajiRepository.update(gaji)
     }
 
-    fun delete(gaji: Gaji) {
-        mgajiRepository.delete(gaji)
-    }
-
 }
