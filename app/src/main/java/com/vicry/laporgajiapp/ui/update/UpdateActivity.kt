@@ -53,6 +53,8 @@ class UpdateActivity : AppCompatActivity() {
             binding?.tvTglLahirInput?.setText(gaji.tanggalLahir)
             binding?.tvTglMasukInput?.setText(gaji.tanggalMasuk)
             binding?.tvTotalGaji?.setText(gaji.gaji)
+            binding?.tvTotalGajiPokok?.setText(gaji.gajiPokok)
+            binding?.tvTotalGajiBonus?.setText(gaji.gajiBonus)
         }
 
         binding?.btnUpdatePegawai?.setOnClickListener {
@@ -62,6 +64,8 @@ class UpdateActivity : AppCompatActivity() {
             val alamat = binding?.etAlamat?.text.toString().trim()
             val golongan = binding?.tvGolonganGaji?.text.toString().trim()
             val totalgaji = binding?.tvTotalGaji?.text.toString()
+            val gajiPokok = binding?.tvTotalGajiPokok?.text.toString()
+            val gajiBonus = binding?.tvTotalGajiBonus?.text.toString()
 
             val tglLahir = binding?.tvTglLahirInput?.text.toString().trim()
             val tglMasuk = binding?.tvTglMasukInput?.text.toString().trim()
@@ -91,6 +95,8 @@ class UpdateActivity : AppCompatActivity() {
                         gaji?.gaji = totalgaji
                         gaji?.tanggalLahir = tglLahir
                         gaji?.tanggalMasuk = tglMasuk
+                        gaji?.gajiPokok = gajiPokok
+                        gaji?.gajiBonus = gajiBonus
                     }
                     updateViewModel.update(gaji as Gaji)
                     showToast(getString(R.string.update))
@@ -128,22 +134,31 @@ class UpdateActivity : AppCompatActivity() {
                 binding?.tvGolonganGaji?.text = golItem
                 binding?.tvTotalGaji?.text = golItem
 
+                val gajiGol1 = 1500000
+                val gajiGol2 = 1000000
+                val gajiGol3 = 500000
                 var totalGaji = 0.0
+                val bonusGol1 = (gajiGol1*0.5)
+                val bonusGol2 = (gajiGol2*0.4)
+                val bonusGol3 = (gajiGol3*0.3)
                 when (golItem) {
                     "Gol.1 Manager" -> {
-                        val gajiGol1 = 1500000
-                        totalGaji = gajiGol1 - (gajiGol1*0.05) + (gajiGol1*0.5)
+                        totalGaji = gajiGol1 - (gajiGol1*0.05) + bonusGol1
                         binding?.tvTotalGaji?.text = totalGaji.toString()
+                        binding?.tvTotalGajiPokok?.text = gajiGol1.toString()
+                        binding?.tvTotalGajiBonus?.text = bonusGol1.toString()
                     }
                     "Gol.2 Supervisor" -> {
-                        val gajiGol2 = 1000000
-                        totalGaji = gajiGol2 - (gajiGol2*0.05) + (gajiGol2*0.4)
+                        totalGaji = gajiGol2 - (gajiGol2*0.05) + bonusGol2
                         binding?.tvTotalGaji?.text = totalGaji.toString()
+                        binding?.tvTotalGajiPokok?.text = gajiGol2.toString()
+                        binding?.tvTotalGajiBonus?.text = bonusGol2.toString()
                     }
                     "Gol.3 Staff" -> {
-                        val gajiGol1 = 500000
-                        totalGaji = gajiGol1 - (gajiGol1*0.05) + (gajiGol1*0.3)
+                        totalGaji = gajiGol3 - (gajiGol3*0.05) + bonusGol3
                         binding?.tvTotalGaji?.text = totalGaji.toString()
+                        binding?.tvTotalGajiPokok?.text = gajiGol3.toString()
+                        binding?.tvTotalGajiBonus?.text = bonusGol3.toString()
                     }
                 }
             }

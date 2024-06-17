@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.update.UpdateActivity">
 
+
     <TextView
         android:id="@+id/tvNama"
         android:layout_width="wrap_content"
@@ -248,15 +249,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/llGaji"/>
 
+    <TextView
+        android:id="@+id/tv_gaji_pokok"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Gaji: Pokok"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_total_gaji"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_gaji"
+        app:layout_constraintTop_toBottomOf="@id/tv_total_gaji" />
+
+    <TextView
+        android:id="@+id/tv_total_gaji_pokok"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:text="Rp 0,0"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_gaji_pokok"/>
+
+    <TextView
+        android:id="@+id/tv_gaji_bonus"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Bonus"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_total_gaji_pokok"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_gaji_pokok"
+        app:layout_constraintTop_toBottomOf="@id/tv_total_gaji_pokok" />
+
+    <TextView
+        android:id="@+id/tv_total_gaji_bonus"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:text="Rp 0,0"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_gaji_bonus"/>
+
 
     <Button
-        android:id="@+id/btn_update_pegawai"
+        android:id="@+id/btnUpdatePegawai"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Submit"
-        app:layout_constraintEnd_toEndOf="@+id/tv_tgl_masuk_input"
-        app:layout_constraintStart_toStartOf="@+id/tv_total_gaji"
-        app:layout_constraintTop_toBottomOf="@id/tv_total_gaji" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_total_gaji_bonus"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_gaji_bonus"
+        app:layout_constraintTop_toBottomOf="@id/tv_total_gaji_bonus" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

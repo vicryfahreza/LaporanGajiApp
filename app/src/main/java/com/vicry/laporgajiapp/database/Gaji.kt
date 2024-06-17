@@ -33,4 +33,11 @@ data class Gaji(
 
     @ColumnInfo(name = "gaji")
     var gaji: String? = null,
+
+    @ColumnInfo(name = "gajiPokok")
+    var gajiPokok: String? = null,
+
+    @ColumnInfo(name = "gajiBonus")
+    var gajiBonus: String? = null,
+
 ) : Parcelable
