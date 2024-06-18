@@ -22,6 +22,7 @@ interface GajiDao {
     @Query("SELECT * from gaji ORDER BY id ASC")
     fun getAllGaji(): LiveData<List<Gaji>>
 
-    @Query("SELECT * from gaji WHERE tanggalMasuk = strftime('%m', 'now')")
-    fun searchAllGaji(): LiveData<List<Gaji>>
+//    '%2024/04%'
+    @Query("SELECT * from gaji WHERE tanggalMasuk LIKE '%' || :cari || '%' ")
+    fun searchPreviousMonth(cari: String): LiveData<List<Gaji>>
 }

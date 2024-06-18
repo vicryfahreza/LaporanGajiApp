@@ -12,7 +12,7 @@
         android:id="@+id/rv_gaji"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnPrevMonth"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="cari"
+        app:layout_constraintEnd_toStartOf="@+id/btnAllGaji"
+        app:layout_constraintStart_toEndOf="@+id/tilCari"
+        app:layout_constraintTop_toBottomOf="@id/add_gaji" />
 
+    <Button
+        android:id="@+id/btnAllGaji"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="All"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_gaji" />
 
+    <TextView
+        android:id="@+id/tvLabelCari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contoh Input 2024/04"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/add_gaji"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCari"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="@dimen/start_end_margin"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="@dimen/start_end_margin"
+        app:boxCornerRadiusBottomEnd="@dimen/til_radius"
+        app:boxCornerRadiusBottomStart="@dimen/til_radius"
+        app:boxCornerRadiusTopEnd="@dimen/til_radius"
+        app:boxCornerRadiusTopStart="@dimen/til_radius"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelCari">
+
+        <EditText
+            android:id="@+id/etCari"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tahun/Bulan"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/et_text_size"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

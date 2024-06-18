@@ -19,6 +19,8 @@ class GajiRepository(application: Application) {
 
     fun getAllGaji(): LiveData<List<Gaji>> = mGajiDao.getAllGaji()
 
+    fun searchPreviousMonth(cari: String): LiveData<List<Gaji>> = mGajiDao.searchPreviousMonth(cari)
+
     fun insert(gaji: Gaji) {
         executorService.execute { mGajiDao.insert(gaji) }
     }

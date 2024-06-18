@@ -45,6 +45,23 @@ class MainActivity : AppCompatActivity(), DeleteItemListener {
         binding?.rvGaji?.setHasFixedSize(true)
         binding?.rvGaji?.adapter = adapter
 
+        binding?.btnPrevMonth?.setOnClickListener {
+            val search = binding?.etCari?.text.toString().trim()
+            mainViewModel.searchPreviousMonth(search).observe(this) { gajiList ->
+                if(gajiList != null) {
+                    adapter.setListGaji(gajiList)
+                }
+            }
+        }
+
+        binding?.btnAllGaji?.setOnClickListener {
+            mainViewModel.getAllGaji().observe(this) { gajiList ->
+                if(gajiList != null) {
+                    adapter.setListGaji(gajiList)
+                }
+            }
+        }
+
     }
 
     override fun onDestroy() {
