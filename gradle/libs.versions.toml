@@ -13,6 +13,14 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 roomCompiler = "2.5.2"
 roomRuntime = "2.5.2"
+core-testing = "2.1.0"
+kotlix-coroutine-test = "1.6.1"
+mockito-core = "3.12.4"
+mockito-inline = "3.12.4"
+truth = "1.4.2"
+junitKtx = "1.1.5"
+runner = "1.5.2"
+junit-jupiter = "5.8.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -27,6 +35,14 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+core-testing = { module = "androidx.arch.core:core-testing", version.ref = "core-testing" }
+kotlinx-coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlix-coroutine-test" }
+truth = { module = "com.google.truth:truth", version.ref = "truth" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito-inline" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
+androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
+jupiter-junit = { group = "org.junit.jupiter:junit-jupiter", name = "junit-jupiter", version.ref = "junit-jupiter" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

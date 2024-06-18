@@ -62,6 +62,8 @@ class DetailActivity : AppCompatActivity() {
             binding?.tvTgLahir?.setText("Tanggal Lahir : ${gaji.tanggalLahir}")
             binding?.tvTgMasuk?.setText("Tanggal Masuk Kerja : ${gaji.tanggalMasuk}")
             binding?.tvGaji?.setText("Total Gaji : ${gaji.gaji}")
+            binding?.tvGaji?.setText("Total Bonus : ${gaji.gajiBonus}")
+            binding?.tvGaji?.setText("Gaji Pokok: ${gaji.gajiPokok}")
 
             binding?.btnPdf?.setOnClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -72,7 +74,9 @@ class DetailActivity : AppCompatActivity() {
                         gaji.tanggalLahir,
                         gaji.tanggalMasuk,
                         gaji.gaji,
-                        gaji.golongan
+                        gaji.golongan,
+                        gaji.gajiBonus,
+                        gaji.gajiPokok,
                     )
                 }
             }
@@ -92,7 +96,7 @@ class DetailActivity : AppCompatActivity() {
 
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
-    fun generatePDF(nama: String?, alamat: String?, nip: String?, tanggalLahir: String?, tanggalMasuk: String?, totalGaji : String?, golongan: String?) {
+    fun generatePDF(nama: String?, alamat: String?, nip: String?, tanggalLahir: String?, tanggalMasuk: String?, totalGaji : String?, golongan: String?, gajiBonus: String?, gajiPokok: String?) {
         val pdfDocument = PdfDocument()
 
         val title = Paint()
@@ -117,6 +121,8 @@ class DetailActivity : AppCompatActivity() {
         title.textSize = 20F
 
         title.textAlign = Paint.Align.CENTER
+        canvas.drawText("Gaji Pokok: $gajiPokok", 396F, 650F, title)
+        canvas.drawText("Total Bonus: $gajiBonus", 396F, 620F, title)
         canvas.drawText("Total Gaji: $totalGaji", 396F, 590F, title)
         canvas.drawText("Tanggal Masuk: $tanggalMasuk", 396F, 560F, title)
         canvas.drawText("TanggalLahir: $tanggalLahir", 396F, 530F, title)
